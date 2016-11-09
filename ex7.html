@@ -10,9 +10,15 @@
     /*
     Add an a element that goes to http://google.com within the #content element by finding that element on the page and setting its innerHTML property.
     */
+    // var link = document.createElement('a');
+    // link.setAttribute('href', 'http://google.com');
+    // link.textContent = "Google";
+    // document.getElementById("content").appendChild(link);
+
+    var content = document.getElementById("content");
     var link = document.createElement('a');
-    link.setAttribute('href', 'http://google.com')
-    document.getElementById("content").appendChild(link);
+    link.innerHTML = "<a href='http://google.com'>Google</a>";
+    content.appendChild(link);
     </script>
   </body>
 </html>
