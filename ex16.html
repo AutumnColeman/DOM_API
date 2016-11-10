@@ -29,7 +29,8 @@
             var removeButton = event.target;
             var li = removeButton.parentElement;
             var ul = li.parentElement;
-            ul.removeChild(li);
+            // ul.removeChild(li);
+            li.remove();
           }
       });
     });
