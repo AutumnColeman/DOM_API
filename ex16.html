@@ -14,22 +14,25 @@
     into #tasks.
     */
     window.addEventListener('load', function() {
-      // var task = document.getElementById('tasks')
-      // button.addEventListener("click", function() {
-      //   this.remove() = 'You clicked!';
+      var addButton = document.getElementById('add-button');
+      var taskList = document.getElementById('tasks');
+      var textField = document.getElementById('input-field');
+      addButton.addEventListener('click', function() {
+        var li = document.createElement('li');
+        li.innerHTML = textField.value + '<button>remove</button>';
+        taskList.appendChild(li);
+        textField.value = '';
+      });
 
-      document.getElementById('add-button').addEventListener("click", function() {
-        var newLi = document.createElement('li');
-        var content = document.getElementById('input-field');
-        var remove = document.createElement('button');
-        remove.textContent = 'remove';
-        newLi.textContent = content.value;
-        document.getElementById("tasks").appendChild(newLi).appendChild(remove);
-      })
-      document.getElementById('button').contains('remove').addEventListener("click", function() {
-      
-        newLi.last().remove()
-    })
+      taskList.addEventListener('click', function(event) {
+          if (event.target.matches('button')) {
+            var removeButton = event.target;
+            var li = removeButton.parentElement;
+            var ul = li.parentElement;
+            ul.removeChild(li);
+          }
+      });
+    });
     </script>
   </head>
   <body>
