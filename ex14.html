@@ -8,6 +8,10 @@
     <button>Click me</button>
     <button>Click me</button>
     <button>Click me</button>
+    <p>
+      Hello
+    </p>
+    <h1>Hi</h1>
     <script>
     /*
     Same as ex13: When any button is clicked, change the
@@ -17,6 +21,17 @@
     Except this time, add the event listener to the body - which you can access simply
     through document.body.
     */
+
+      document.body.addEventListener("click", function(event) {
+        // if (event.target.tagName === 'BUTTON') {
+        if (event.target.matches('button')) {
+          event.target.textContent = 'You clicked!';
+        } else {
+          event.target.textContent = 'Haha!';
+        }
+      })
+
+
     </script>
   </body>
 </html>
