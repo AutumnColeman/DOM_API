@@ -17,6 +17,13 @@
     Hint: Use event.target - event is the first parameter in the event handler
     function to addEventListener.
     */
+
+    var button = document.querySelectorAll('button');
+    for (var i = 0; i < button.length; i++) {
+      button[i].addEventListener("click", function() {
+        this.textContent = 'You clicked!';
+      })
+    }
     </script>
   </body>
 </html>
