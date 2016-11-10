@@ -11,6 +11,11 @@
     Print "You clicked!" to the console when
     the button is clicked.
     */
+    button.addEventListener('click', function(event) {
+      var button = document.getElementById('button')
+      button.textContent = 'You clicked!'
+    });
+
     </script>
   </body>
 </html>
