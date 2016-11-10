@@ -13,6 +13,23 @@
     the task description and a remove button
     into #tasks.
     */
+    window.addEventListener('load', function() {
+      // var task = document.getElementById('tasks')
+      // button.addEventListener("click", function() {
+      //   this.remove() = 'You clicked!';
+
+      document.getElementById('add-button').addEventListener("click", function() {
+        var newLi = document.createElement('li');
+        var content = document.getElementById('input-field');
+        var remove = document.createElement('button');
+        remove.textContent = 'remove';
+        newLi.textContent = content.value;
+        document.getElementById("tasks").appendChild(newLi).appendChild(remove);
+      })
+      document.getElementById('button').contains('remove').addEventListener("click", function() {
+      
+        newLi.last().remove()
+    })
     </script>
   </head>
   <body>
